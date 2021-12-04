@@ -36,7 +36,7 @@ jobs:
             command: |
               export TAG=v${CIRCLE_BUILD_NUM}
               export IMAGE_NAME=capstone
-              docker build -t ahmedadell94/$IMAGE_NAME:$TAG .
+              docker build -t omarmaher2909/$IMAGE_NAME:$TAG .
 
     push-docker-image:
       docker:
@@ -51,9 +51,9 @@ jobs:
               export TAG=v${CIRCLE_BUILD_NUM}
               export IMAGE_NAME=capstone
 
-              docker build -t ahmedadell94/$IMAGE_NAME:$TAG .
+              docker build -t omarmaher2909/$IMAGE_NAME:$TAG .
               docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
-              docker push ahmedadell94/$IMAGE_NAME:$TAG
+              docker push omarmaher2909/$IMAGE_NAME:$TAG
 
     deploy-application:
       executor: aws-eks/python3
